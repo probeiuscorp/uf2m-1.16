@@ -1,0 +1,5 @@
+{
+    "variants":{
+        "normal": { "model": "ufmm:titanium_block" }
+    }
+}

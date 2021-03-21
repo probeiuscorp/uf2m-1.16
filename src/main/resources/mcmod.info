@@ -1,0 +1,16 @@
+[
+{
+  "modid": "ufmm",
+  "name": "uwuFailure's Metallurgy Mod",
+  "description": "Adds metallurgy to Minecraft, allowing players to decide what trade-offs they would like to make when making their armor and tools. Also adds new ores and dimensions.",
+  "version": "Early Development",
+  "mcversion": "1.16.4",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["uwuFailure"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

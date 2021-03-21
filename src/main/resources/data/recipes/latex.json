@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        "W",
+        "B"
+    ],
+    
+    "key": {
+        "W": {
+            "item":"ufmm:rubber_wood"
+        },
+        "B": {
+            "item":"minecraft:bucket"
+        }
+    },
+    
+    "result": {
+        "item": "ufmm:latex",
+        "count": 1
+    }
+}

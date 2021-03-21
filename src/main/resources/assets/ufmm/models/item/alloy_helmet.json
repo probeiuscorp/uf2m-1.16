@@ -1,0 +1,7 @@
+{
+   "parent": "item/generated",
+   "textures": {
+       "layer0": "ufmm:items/alloy_helmet",
+       "layer1": "ufmm:items/alloy_helmet_overlay"
+   }
+}

@@ -1,0 +1,51 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "ufmm:red_pipe"
+	},
+	"variants": {
+		"north": {
+			"true": { 
+				"submodel": "ufmm:red_pipe_arm"
+			}, 
+			"false": {}
+		},
+		"south": {
+			"true": { 
+				"submodel": "ufmm:red_pipe_arm", 
+				"y": 180
+			}, 
+			"false": {}
+		},
+		"east": {
+			"true": { 
+				"submodel": "ufmm:red_pipe_arm", 
+				"y": 90
+			}, 
+			"false": {}
+		},
+		"west": {
+			"true": { 
+				"submodel": "ufmm:red_pipe_arm", 
+				"y": 270
+			}, 
+			"false": {}
+		},
+		"up": {
+			"true": { 
+				"submodel": "ufmm:red_pipe_arm", 
+				"x": 270
+			}, 
+			"false": {}
+		},
+		"down": {
+			"true": { 
+				"submodel": "ufmm:red_pipe_arm", 
+				"x": 90
+			}, 
+			"false": {}
+		},
+        "inventory": [{ "model": "item/generated", "textures": { "layer0": "ufmm:blocks/red_pipe" } }]
+		
+	}
+}

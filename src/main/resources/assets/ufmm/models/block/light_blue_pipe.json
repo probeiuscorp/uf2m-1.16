@@ -1,0 +1,7 @@
+{
+	"parent": "ufmm:block/pipe_center",
+	"textures": {
+		"terracotta": "blocks/hardened_clay_stained_light_blue",
+        "particle": "blocks/hardened_clay_stained_light_blue"
+	}
+}

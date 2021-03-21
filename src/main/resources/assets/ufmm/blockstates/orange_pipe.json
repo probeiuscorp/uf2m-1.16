@@ -1,0 +1,49 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "ufmm:orange_pipe"
+	},
+	"variants": {
+		"north": {
+			"true": { 
+				"submodel": "ufmm:orange_pipe_arm"
+			}, 
+			"false": {}
+		},
+		"south": {
+			"true": { 
+				"submodel": "ufmm:orange_pipe_arm", 
+				"y": 180
+			}, 
+			"false": {}
+		},
+		"east": {
+			"true": { 
+				"submodel": "ufmm:orange_pipe_arm", 
+				"y": 90
+			}, 
+			"false": {}
+		},
+		"west": {
+			"true": { 
+				"submodel": "ufmm:orange_pipe_arm", 
+				"y": 270
+			}, 
+			"false": {}
+		},
+		"up": {
+			"true": { 
+				"submodel": "ufmm:orange_pipe_arm", 
+				"x": 270
+			}, 
+			"false": {}
+		},
+		"down": {
+			"true": { 
+				"submodel": "ufmm:orange_pipe_arm", 
+				"x": 90
+			}, 
+			"false": {}
+		}
+	}
+}

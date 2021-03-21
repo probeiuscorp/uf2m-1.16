@@ -1,0 +1,99 @@
+{
+    "credit": "Made with Blockbench",
+    "parent": "block/block",
+    "textures": {
+        "terracotta": "blocks/hardened_clay_stained_orange"
+    },
+    "elements": [
+        {
+            "name": "west",
+            "from": [4, 5, 5],
+            "to": [5, 11, 11],
+            "color": 4,
+            "faces": {
+                "north": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "east": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "south": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "west": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "up": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "down": {"uv": [0, 0, 1, 6], "texture": "#terracotta"}
+            }
+        },
+        {
+            "name": "east",
+            "from": [11, 5, 5],
+            "to": [12, 11, 11],
+            "color": 4,
+            "faces": {
+                "north": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "east": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "south": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "west": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "up": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "down": {"uv": [0, 0, 1, 6], "texture": "#terracotta"}
+            }
+        },
+        {
+            "name": "north",
+            "from": [5, 5, 4],
+            "to": [11, 11, 5],
+            "color": 4,
+            "faces": {
+                "north": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "east": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "south": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "west": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "up": {"uv": [0, 0, 1, 6], "rotation": 90, "texture": "#terracotta"},
+                "down": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"}
+            }
+        },
+        {
+            "name": "south",
+            "from": [5, 5, 11],
+            "to": [11, 11, 12],
+            "color": 4,
+            "faces": {
+                "north": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "east": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "south": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "west": {"uv": [0, 0, 1, 6], "texture": "#terracotta"},
+                "up": {"uv": [0, 0, 1, 6], "rotation": 90, "texture": "#terracotta"},
+                "down": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"}
+            }
+        },
+        {
+            "name": "top",
+            "from": [5, 11, 5],
+            "to": [11, 12, 11],
+            "color": 4,
+            "faces": {
+                "north": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"},
+                "east": {"uv": [0, 0, 1, 6], "rotation": 90, "texture": "#terracotta"},
+                "south": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"},
+                "west": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"},
+                "up": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "down": {"uv": [0, 0, 6, 6], "rotation": 180, "texture": "#terracotta"}
+            }
+        },
+        {
+            "name": "bottom",
+            "from": [5, 4, 5],
+            "to": [11, 5, 11],
+            "color": 4,
+            "faces": {
+                "north": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"},
+                "east": {"uv": [0, 0, 1, 6], "rotation": 90, "texture": "#terracotta"},
+                "south": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"},
+                "west": {"uv": [0, 0, 1, 6], "rotation": 270, "texture": "#terracotta"},
+                "up": {"uv": [0, 0, 6, 6], "texture": "#terracotta"},
+                "down": {"uv": [0, 0, 6, 6], "rotation": 180, "texture": "#terracotta"}
+            }
+        }
+    ],
+    "groups": [
+        {
+            "name": "center",
+            "children": [0, 1, 2, 3, 4, 5]
+        }
+    ]
+}

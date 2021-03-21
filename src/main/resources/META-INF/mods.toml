@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="GNU GPLv3"
+issueTrackerURL="https://github.com/uwuFailure/uf2m-1.16/issues"
+
+[[mods]]
+modId="ufmm"
+displayName="UF2M"
+displayURL="https://github.com/uwuFailure/uf2m-1.16"
+authors="uwuFailure"
+description='''
+uwuFailure's Metallurgy Mod - adds metallurgy to Minecraft.'''

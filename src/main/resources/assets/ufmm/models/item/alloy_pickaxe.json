@@ -1,0 +1,7 @@
+{
+   "parent": "item/handheld",
+   "textures": {
+       "layer0": "ufmm:items/alloy_pickaxe",
+	   "layer1": "ufmm:items/alloy_pickaxe_overlay"
+   }
+}

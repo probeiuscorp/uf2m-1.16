@@ -1,0 +1,6 @@
+{
+	"parent": "ufmm:block/pipe_arm",
+	"textures": {
+		"terracotta": "minecraft:blocks/hardened_clay_stained_lime"
+	}
+}

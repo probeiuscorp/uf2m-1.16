@@ -1,0 +1,9 @@
+{
+	"type": "minecraft:smelting",
+	"ingredient": {
+		"item": "ufmm:bauxite"
+	},
+	"result": "ufmm:aluminum",
+	"experience": 0.7,
+	"cookingtime": 200
+}

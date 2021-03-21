@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern": [
+        "I"
+    ],
+    
+    "key": {
+        "I": {
+            "item":"minecraft:iron_ingot"
+        }
+    },
+    
+    "result": {
+        "item": "ufmm:iron_chip",
+        "count": 36
+    }
+}
