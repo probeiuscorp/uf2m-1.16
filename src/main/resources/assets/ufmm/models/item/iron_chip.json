@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "ufmm:items/iron_chip"
+       "layer0": "ufmm:item/iron_chip"
    }
 }

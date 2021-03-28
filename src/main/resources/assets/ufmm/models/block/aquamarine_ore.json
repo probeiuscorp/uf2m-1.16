@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "ufmm:blocks/aquamarine_ore"
+        "all": "ufmm:block/aquamarine_ore"
     }
 }

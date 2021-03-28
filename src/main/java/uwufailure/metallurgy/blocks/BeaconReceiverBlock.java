@@ -7,24 +7,30 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.state.BooleanProperty;
+import net.minecraft.state.StateContainer;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ToolType;
 
 public class BeaconReceiverBlock extends BlockBase {
-	protected static final VoxelShape SHAPE = Block.makeCuboidShape(0, 0.625D, 0, 1, 1, 1);
+	protected static final VoxelShape SHAPE = Block.makeCuboidShape(0D, 10D, 0D, 16D, 16D, 16D);
 	public static final BooleanProperty ACTIVE = BooleanProperty.create("active");
 	
 	public BeaconReceiverBlock(String name, Material material) {
 		super(name, material, ToolType.PICKAXE, 2, 3.0F, 15F);
 		this.setDefaultState(this.stateContainer.getBaseState().with(ACTIVE, Boolean.valueOf(false)));
-//		BlockTags.BEACON_BASE_BLOCKS;
 	}
+	
+	protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
+      builder.add(ACTIVE);
+   }
 	
 	@Override
 	public VoxelShape getShape(BlockState state, IBlockReader worldIn, BlockPos pos, ISelectionContext context) {
@@ -84,5 +90,11 @@ public class BeaconReceiverBlock extends BlockBase {
 		if(valid) System.out.println("Your beacon receiver is now active!");
 		
 		world.setBlockState(pos, state.with(ACTIVE, valid));
+	}
+	
+	@Override
+	@SuppressWarnings("deprecation")
+	public BlockState updatePostPlacement(BlockState stateIn, Direction facing, BlockState facingState, IWorld worldIn, BlockPos currentPos, BlockPos facingPos) {
+		return !stateIn.isValidPosition(worldIn, currentPos) ? Blocks.AIR.getDefaultState() : super.updatePostPlacement(stateIn, facing, facingState, worldIn, currentPos, facingPos);
 	}
 }

@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "ufmm:items/gold_chip"
+       "layer0": "ufmm:item/gold_chip"
    }
 }

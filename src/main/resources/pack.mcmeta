@@ -1,5 +1,6 @@
 {
     "pack": {
-        "description": "Resource pack for UF2M"
+        "description": "Resource pack for UF2M",
+	"pack_format": 6
     }
 }

@@ -5,6 +5,7 @@ issueTrackerURL="https://github.com/uwuFailure/uf2m-1.16/issues"
 
 [[mods]]
 modId="ufmm"
+version="Early development"
 displayName="UF2M"
 displayURL="https://github.com/uwuFailure/uf2m-1.16"
 authors="uwuFailure"

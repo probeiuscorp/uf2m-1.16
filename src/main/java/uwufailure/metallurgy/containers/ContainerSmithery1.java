@@ -1,10 +1,12 @@
 package uwufailure.metallurgy.containers;
 
-import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.Container;
-import net.minecraft.network.PacketBuffer;
 
-public class ContainerSmithery1 /*extends Container*/ {
+public class ContainerSmithery1 extends Container {
+	
+	public ContainerSmithery1(final int windowId, final PlayerInventory playerInventory, final PacketBuffer data) {
+		
+	}
 	
 //	private final World world;
 //	private final BlockPos pos;

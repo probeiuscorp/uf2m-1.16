@@ -41,9 +41,9 @@ public class ModBlocks {
 //	public static final Block BLACK_PIPE = new BlockPipeBase("black");
 //	public static final Block JOINING_PIPE = new BlockJoiningPipe();
 	
-	public static final Block BEACON_RECIEVER = new BeaconReceiverBlock("beacon_receiver", Material.ROCK);
+	public static final BeaconReceiverBlock BEACON_RECIEVER = new BeaconReceiverBlock("beacon_receiver", Material.ROCK);
 	
-	public static final Block SMITHERY = new BlockSmithery();
+	public static final BlockSmithery SMITHERY = new BlockSmithery();
 	
 	@SubscribeEvent
 	public static void onBlocksRegistration(final RegistryEvent.Register<Block> blockRegisterEvent) {

@@ -20,6 +20,7 @@ public class Main {
 	}
 	
 	public void registerCommonEvents(IEventBus eventBus) {
+		eventBus.register(uwufailure.metallurgy.init.ModItems.class);
 		eventBus.register(uwufailure.metallurgy.init.ModBlocks.class);
 	}
 }

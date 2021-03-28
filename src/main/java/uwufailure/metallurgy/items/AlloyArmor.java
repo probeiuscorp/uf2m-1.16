@@ -1,54 +1,39 @@
 package uwufailure.metallurgy.items;
 
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 
 import javax.annotation.Nullable;
 
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
+import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.IDyeableArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.ISpecialArmor;
-import net.minecraftforge.common.util.Constants.NBT;
-import uwufailure.metallurgy.Main;
 import uwufailure.metallurgy.conditions.ArmorCondition;
-import uwufailure.metallurgy.conditions.ArmorConditions;
 import uwufailure.metallurgy.init.ModItems;
 import uwufailure.metallurgy.items.alloy.AlloyHelper;
-import uwufailure.metallurgy.items.alloy.AlloyProperty;
 import uwufailure.metallurgy.items.alloy.IAlloyItem;
-import uwufailure.metallurgy.util.IHasModel;
 import uwufailure.metallurgy.util.Reference;
 
 public class AlloyArmor extends ArmorItem implements IAlloyItem, IDyeableArmorItem {
 	public static final float[] PIECE_FACTORS = new float[] { 3.0F, 6.0F, 8.0F, 3.0F };
 
-	public AlloyArmor(String name, ArmorMaterial materialIn, EquipmentSlotType equipmentSlotIn, Item.Properties properties) {
+	public AlloyArmor(String name, IArmorMaterial materialIn, EquipmentSlotType equipmentSlotIn, Item.Properties properties) {
 		super(materialIn, equipmentSlotIn, properties.maxStackSize(1));
 		this.setRegistryName(Reference.MOD_ID, name);
 		
 		ModItems.ITEMS.add(this);
 	}
+	
 
 	@Override
 	public boolean hasColor(ItemStack stack) {
@@ -72,6 +57,7 @@ public class AlloyArmor extends ArmorItem implements IAlloyItem, IDyeableArmorIt
 
 	@Override
 	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		if(worldIn == null) return; // Prevent pre-generating tooltips for the item search from crashing
 		tooltip.add(new TranslationTextComponent("ufmm.tooltip.armor.protection", TextFormatting.BLUE, AlloyArmor.getProtectionPercent(AlloyHelper.getStrength(stack))));
 		AlloyHelper.addStandardTooltip(stack, tooltip);
 	}
@@ -149,42 +135,5 @@ public class AlloyArmor extends ArmorItem implements IAlloyItem, IDyeableArmorIt
 	@Override
 	public int getRefractory(ItemStack stack) {
 		return AlloyHelper.getRefractory(stack);
-	}
-	
-	/* ISpecialArmor Overrides */
-
-	@Override
-	public ArmorProperties getProperties(EntityLivingBase player, ItemStack armor, DamageSource source, double damage,int slot) {
-		NBTTagCompound nbt = AlloyHelper.fillDefaultProperties(armor);
-
-		int strength = nbt.getCompoundTag("Properties").getInteger("strength");
-		float armorPieceFactor = PIECE_FACTORS[slot] / pieceFactorSum();
-
-		if (source.isUnblockable()) {
-			return new ArmorProperties(0, 0, 0);
-		}
-
-//		System.out.println(strength + " | " + armorPieceFactor + " | " + damage + " | "
-//				+ ((float) strength / 100) * armorPieceFactor);
-		return new ArmorProperties(0, (getProtectionPercent(strength) / 100) * armorPieceFactor, Integer.MAX_VALUE);
-	}
-
-	@Override
-	public int getArmorDisplay(EntityPlayer player, ItemStack armor, int slot) {
-		NBTTagCompound nbt = AlloyHelper.fillDefaultProperties(armor);
-
-		int strength = nbt.getCompoundTag("Properties").getInteger("strength");
-
-		return Math.round(((float) getProtectionPercent(strength) / 5) * (PIECE_FACTORS[slot] / pieceFactorSum()));
-	}
-
-	@Override
-	public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) {
-		NBTTagCompound nbt = AlloyHelper.fillDefaultProperties(stack);
-
-		int strength = nbt.getCompoundTag("Properties").getInteger("strength");
-		float armorPieceFactor = PIECE_FACTORS[slot] / pieceFactorSum();
-		// stack.damage
-		stack.damageItem((int)Math.round(damage * (getProtectionPercent(strength) / 100) * armorPieceFactor), entity);
 	}
 }

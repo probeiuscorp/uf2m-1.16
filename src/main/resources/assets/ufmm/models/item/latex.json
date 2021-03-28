@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "ufmm:items/latex"
+       "layer0": "ufmm:item/latex"
    }
 }

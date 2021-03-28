@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
 import uwufailure.metallurgy.conditions.ArmorCondition;
 import uwufailure.metallurgy.conditions.ArmorConditionAlignment;
-import uwufailure.metallurgy.conditions.ArmorConditionMap;
+import uwufailure.metallurgy.conditions.ArmorConditionRegistry;
 
 public class AlloyHelper {
 	/** Default tint for all Alloy equipment */
@@ -145,6 +145,9 @@ public class AlloyHelper {
 	}
 	
 	public static void addStandardTooltip(ItemStack stack, List<ITextComponent> tooltip, boolean showRust) {
+		System.out.println(stack.toString());
+		System.out.flush();
+
 		CompoundNBT nbt = AlloyHelper.fillDefaultProperties(stack);
 		if(nbt != null) {
 			if(showRust) {
@@ -222,7 +225,7 @@ public class AlloyHelper {
 		ListNBT nbt = AlloyHelper.fillDefaultProperties(stack).getList("conditions", Constants.NBT.TAG_STRING);
 		
 		for(int i=0;i<nbt.size();i++) {
-			ArmorCondition condition = ArmorConditionMap.get(nbt.getString(i));
+			ArmorCondition condition = ArmorConditionRegistry.get(nbt.getString(i));
 			
 			// Ignore invalid conditions
 			if(condition != null) {

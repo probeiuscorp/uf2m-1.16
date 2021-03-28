@@ -1,5 +1,5 @@
 {
     "variants":{
-        "normal": { "model": "ufmm:aquamarine_ore" }
+        "": { "model": "ufmm:block/aquamarine_ore" }
     }
 }

@@ -1,5 +1,5 @@
 {
     "variants":{
-        "normal": { "model": "ufmm:titanium_ore" }
+        "": { "model": "ufmm:block/titanium_ore" }
     }
 }

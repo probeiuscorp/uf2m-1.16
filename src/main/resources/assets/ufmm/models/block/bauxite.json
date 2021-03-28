@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "ufmm:blocks/bauxite"
+        "all": "ufmm:block/bauxite"
     }
 }

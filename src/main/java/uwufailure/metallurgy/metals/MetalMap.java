@@ -13,4 +13,8 @@ public class MetalMap {
 	public static Metal get(Item baseItem) {
 		return map.get(baseItem);
 	}
+	
+	public static HashMap<Item, Metal> getMap() {
+		return map;
+	}
 }

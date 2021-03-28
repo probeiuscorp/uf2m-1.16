@@ -1,18 +1,6 @@
 package uwufailure.metallurgy.gui;
-/*
-import java.util.ArrayList;
 
-import net.minecraft.client.gui.screen.inventory.ContainerScreen;
-import net.minecraft.client.gui.widget.button.ImageButton;
-import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.text.ITextComponent;
-import uwufailure.metallurgy.containers.ContainerSmithery1;
-import uwufailure.metallurgy.util.Reference;
-*/
-public class ContainerScreenSmithery1 /*extends ContainerScreen<ContainerSmithery1>*/ {
+public class ContainerScreenSmithery1 extends ContainerScreen<ContainerSmithery1> {
 //	private static final ResourceLocation TEXTURES_PAGE_1 = new ResourceLocation(Reference.MOD_ID + ":textures/gui/smithery_gui_1.png");
 //	private static final ResourceLocation TEXTURES_PAGE_2 = new ResourceLocation(Reference.MOD_ID + ":textures/gui/smithery_gui_2.png");
 //	private static final ResourceLocation TEXTURES_PAGE_3 = new ResourceLocation(Reference.MOD_ID + ":textures/gui/smithery_gui_3.png");

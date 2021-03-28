@@ -10,10 +10,19 @@ public class ItemBase extends Item {
 	public ItemBase(String name) {
 		super(new Item.Properties().maxStackSize(64).group(Main.UF2M_ITEM_GROUP));
 		this.setRegistryName(Reference.MOD_ID, name);
+
+		ModItems.ITEMS.add(this);
 	}
 	
 	public ItemBase(String name, int stackSize) {
 		super(new Item.Properties().maxStackSize(stackSize).group(Main.UF2M_ITEM_GROUP));
+		this.setRegistryName(Reference.MOD_ID, name);
+		
+		ModItems.ITEMS.add(this);
+	}
+	
+	public ItemBase(String name, Item.Properties properties) {
+		super(properties);
 		this.setRegistryName(Reference.MOD_ID, name);
 		
 		ModItems.ITEMS.add(this);

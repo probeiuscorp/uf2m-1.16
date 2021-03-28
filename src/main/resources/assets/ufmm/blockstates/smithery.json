@@ -1,5 +1,8 @@
 {
-    "variants": {
-        "normal": { "model": "ufmm:smithery"}
+	"variants": {
+        "facing=north": { "model": "ufmm:block/smithery" },
+        "facing=south": { "model": "ufmm:block/smithery", "y": 180 },
+        "facing=west":  { "model": "ufmm:block/smithery", "y": 270 },
+        "facing=east":  { "model": "ufmm:block/smithery", "y": 90 }
     }
 }

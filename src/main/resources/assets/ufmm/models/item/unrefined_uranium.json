@@ -1,6 +1,6 @@
 {
    "parent": "item/generated",
    "textures": {
-       "layer0": "ufmm:items/unrefined_uranium"
+       "layer0": "ufmm:item/unrefined_uranium"
    }
 }

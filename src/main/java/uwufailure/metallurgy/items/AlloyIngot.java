@@ -5,32 +5,29 @@ import java.util.Set;
 
 import javax.annotation.Nullable;
 
-import org.lwjgl.input.Keyboard;
-
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import uwufailure.metallurgy.conditions.ArmorCondition;
 import uwufailure.metallurgy.items.alloy.AlloyHelper;
 import uwufailure.metallurgy.items.alloy.IAlloyItem;
-import uwufailure.metallurgy.util.IHasModel;
-import java.util.Scanner;
 
 public class AlloyIngot extends ItemBase implements IAlloyItem {
 	
 	public AlloyIngot(String name) {
-		super(name, 64);
+		super(name, new Item.Properties().maxStackSize(64));
 	}
 	
 	@Override
-	public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		NBTTagCompound nbt = AlloyHelper.fillDefaultProperties(stack);
-		tooltip.add(TextFormatting.BLUE + "Attack Damage: " + AlloyHelper.getAttackDamage(stack));
-		tooltip.add(TextFormatting.BLUE + "Protection Percent: " + AlloyArmor.getProtectionPercent(AlloyHelper.getStrength(stack)));
-		tooltip.add(TextFormatting.BLUE + "Efficiency: " + AlloyHelper.getEfficiency(stack));
-		tooltip.add("");
+	public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+		if(worldIn == null) return; // Prevent pre-generating tooltips for the item search from crashing
+		tooltip.add(new TranslationTextComponent("ufmm.tooltip.ingot.attack_damage", TextFormatting.BLUE, AlloyHelper.getAttackDamage(stack), TextFormatting.RESET));
+		tooltip.add(new TranslationTextComponent("ufmm.tooltip.ingot.protection", TextFormatting.BLUE, AlloyArmor.getProtectionPercent(AlloyHelper.getStrength(stack)), TextFormatting.RESET));
+		tooltip.add(new TranslationTextComponent("ufmm.tooltip.ingot.efficiency", TextFormatting.BLUE, AlloyHelper.getEfficiency(stack), TextFormatting.RESET));
 		AlloyHelper.addStandardTooltip(stack, tooltip, false);
 	}
 	

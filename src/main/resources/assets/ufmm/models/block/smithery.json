@@ -1,6 +1,12 @@
 {
-    "parent": "block/cube_all",
+    "parent": "block/cube",
     "textures": {
-        "all": "minecraft:blocks/iron_ore"
+		"down": "ufmm:block/smithery_bottom",
+		"up": "ufmm:block/smithery_top",
+		"north": "ufmm:block/smithery_front",
+		"east": "ufmm:block/smithery_side",
+		"south": "ufmm:block/smithery_front",
+		"west": "ufmm:block/smithery_side",
+		"particle": "ufmm:block/smithery_bottom"
     }
 }

@@ -15,7 +15,7 @@ public abstract class ArmorCondition {
 		this.validOn = validOn;
 		this.unlocalizedName = unlocalizedName;
 		
-		ArmorConditionMap.add(this.unlocalizedName, this);
+		ArmorConditionRegistry.register(this);
 	}
 	
 	public ArmorConditionAlignment getAlignment() {

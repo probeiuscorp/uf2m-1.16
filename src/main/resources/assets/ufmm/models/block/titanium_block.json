@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "ufmm:blocks/titanium_block"
+        "all": "ufmm:block/titanium_block"
     }
 }
